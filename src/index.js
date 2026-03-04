@@ -1,5 +1,6 @@
 // Initialize EmailJS with your Public Key
-emailjs.init("1qs0H-4a42-cRgWzJ")
+// emailjs.init("1qs0H-4a42-cRgWzJ")
+emailjs.init(import.meta.env.EMAILJS_PUBLIC_KEY)
 
 const form = document.getElementById("contact-form")
 const submit = document.getElementById("submit-form")
@@ -15,7 +16,7 @@ form.addEventListener("submit", async (e)=>{
 
             // Send the form data
             //.sendForm('SERVICE_ID', 'TEMPLATE_ID', '#contact-form')-> When you run .sendForm, your browser takes the "Package" (the text in your HTML fields) and "passes" it to the EmailJS Server.
-            await emailjs.sendForm("service_o44ildc", "template_cmsmpwq", "form")    
+            await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, "form")    
 
             alert("Message received. I’ll get back to you as soon as possible.")
 
@@ -33,3 +34,4 @@ form.addEventListener("submit", async (e)=>{
         submit.value="Send"
     }
 })
+
